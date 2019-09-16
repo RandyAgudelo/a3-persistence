@@ -1,74 +1,34 @@
-Assignment 3 - Persistence: Two-tier Web Application with Flat File Database, Express server, and CSS template
-===
+## Online Shopping Calculator
 
-Due: September 16th, by 11:59 AM.
+http://a3-randyagudelo.glitch.me
 
-This assignnment continues where we left off, extending it to use the most popular Node.js server framework (express), a flat file database suitable for small applications (lowdb), and a CSS application framework / template of your choice (Boostrap, Material Design, Semantic UI, Pure etc.)
-
-
-Baseline Requirements
----
-
-Your application is required to implement the following functionalities:
-
-- a `Server`, created using Express (no alternatives will be accepted for this assignment)
-- a `Results` functionality which shows the entire dataset residing in the server's memory
-- a `Form/Entry` functionality which allows users to add, modify, and delete data items (must be all three!) associated with their user name / account.
-- Use of at least five [Express middleware packages](https://expressjs.com/en/resources/middleware.html). Explore! 
-- Basic authentication using the [Passport middleware](http://www.passportjs.org) for Express (this counts as one of your five middleware packages). We encourage using the Local strategy, but OAuth (Open Authentication) can also be used for additional technical achievement. The course staff cannot help you with the various flavors of OAuth strategies. YOU MUST PROVIDE US WITH ACCOUNT CREDENTIALS TO LOGIN TO YOUR APPLICATION IF YOU USE OAUTH. The course staff cannot be expected to have credentials for any particular OAuth service.
-- Persistent data storage in between server sessions. [lowdb](https://github.com/typicode/lowdb) is a suitable database package for this assignment and will be discussed in class.
-- Use of a [CSS framework or template](https://github.com/troxler/awesome-css-frameworks). This should do the bulk of your styling/CSS for you and be appropriate to your application. For example, don't use [NES.css](https://nostalgic-css.github.io/NES.css/) (which is awesome!) unless you're creating a game or some type of retro 80s site.
-
-Your application is required to demonstrate the use of the following concepts:
-
-HTML:
-- HTML input tags and form fields of various flavors (`<textarea>`, `<input>`, checkboxes, radio buttons etc.)
-- HTML that can display all data *for a particular authenticated user*. Note that this is different from the last assignnment, which required the display of all data in memory on the server.
-
-Note that it might make sense to have two simple pages for this assignment, one that handles login / authentication, and one that contains the rest of your application. For this assignment, it is acceptable to simply create new user accounts upon login if none exist, however, you must alert your users to this fact. If you're not using OAuth 
-
-CSS:
-- CSS styling should primarily be provided by your chosen template/framework. Oftentimes a great deal of care has been put into designing CSS templates; don't override their stylesheets unless you are extremely confident in your graphic design capabilities. The idea is to use CSS templates that give you a professional looking design aesthetic without requiring you to be a graphic designer yourself.
-
-JavaScript:
-- At minimum, a small amount of front-end JavaScript to get / fetch data from the server. See the [previous assignment](https://github.com/cs4241-19a/a2-shortstack) for reference.
-
-Node.js:
-- A server using Express, at least five pieces of Express middleware, and a persistent database (a flat file using lowdb is great).
-
-Deliverables
----
-
-Do the following to complete this assignment:
-
-1. Implement your project with the above requirements. A good potential starting point is to use the "hello-express" project template inside of Glitch; this appears as an option when you hit the "New Project" button. Use the work you did in the last assignment as a reference to implement functionality, as well as the notes from class on 9/9 and 9/12.
-2. If you developed your project locally, deploy your project to Glitch, and fill in the appropriate fields in your package.json file.
-3. Test your project to make sure that when someone goes to your main page on Glitch, it displays correctly.
-4. Ensure that your project has the proper naming scheme `a3-yourname` so we can find it.
-5. Fork this repository and modify the README to the specifications below. You do not need to include any of your project files in this repo (we will see those on Glitch), you only need to update and commit the README file.
-6. Create and submit a Pull Request to the original repo. Name the pull request using the following template: `a3-gitname-firstname-lastname`.
-
-Sample Readme (delete the above when you're ready to submit, and modify the below so with your links and descriptions)
----
-
-## Your Web Application Title
-
-your glitch link e.g. http://a3-charlieroberts.glitch.me
-
-Include a very brief summary of your project here. Images are encouraged, along with concise, high-level text. Be sure to include:
-
-- the goal of the application
-- challenges you faced in realizing the application
-- what authentication strategy / database you chose to use and why (choosing one because it seemed the easiest to implement is perfectly acceptable)
-- what CSS framework you used and why.
-  - include any modifications to the CSS framework you made via custom CSS you authored.
-- the five Express middleware packages you used and a short (one sentence) summary of what each one does.
+- This project helps the user create a shopping list where they can add, modify, and remove products as well as give the final total cost of all the products in the list
+- Each user can have their own shopping list by creating their own account which allows each user to have a unique and distinct shopping list which is saved to the server
+- The main challenge faced was the ability to save each users' accounts and shopping list and having the shopping list correspond to the correct user who is signed in
+- The authentication strategy and database used was passport-local and lowdb which were used because it was easier to implement as I had a lack of experience using authentication strategies
+- The CSS framework used was milligram as it was recommended by the Professor and it was the one that needed the least amount of changes to the CSS I originally had
+- The CSS modifications I had to make were to properly space elements out to make it look better and to have an attractive background and readable headings.
+- The five Express middleware packages I used are passport (passport-local), body-parser, express-session, express-slash, express-debug, response-time
+- Passport was used to authenticate users using the local database, body-parser was used to make parsing requests easier, express-session was used to create a server-based session
+  with the settings I specified, express-slash was used to enable strict routing and handles the routes in server with and without trailing slashes, express-debug was used to help
+  me debug certain aspects of the web application by giving me additional details about variables, session, and more, response-time was used to record the response time of requests 
+  from the server which I used to see if a request was taking longer than it was supposed to
+  
+- Additional Notes/Comments: This web application should allow the user to create a new account and once the user has an account, they should be able to log back in sing the login. 
+ Once new users have an account, they will start with an empty shopping List which they can add/modify/remove items. The modification of items is when th user decides to delete only a
+ certain number of products and not all of the products. Each user has their own respective accounts and shopping list that are all unique to each user. When removing products, users are 
+ expected to only remove up to the most amount of products they have in their shopping list and nothing more. **Important: When clicking the sign out, view shopping list, and the back buttons, click on 
+ letters within the button to get a response.** 
 
 ## Technical Achievements
-- **Tech Achievement 1**: I used OAuth authentication via the GitHub strategy
-- **Tech Achievement 2**: I used over ten Express middleware packages, enabling me to create a server that...
+- **Having 3 seperate index.html, scripts.js**: Created a separate webpage for the user to login. Once logged in, the user will be taken to another page where they input all their data while also having the 
+ability to go back to the login page by signing out. Each of the index.html files have their own script.js files with their own functionality.
+
+- **Created a somewhat accessible web application**: Through the use of a web accessibility tool online, I was able to make my webpages more accessible through the use of labels and creating 
+additional identification and details to certain html tags. I also checked the elements on the webpages and they have a good contrast making it easy to read the text with the given background.
+
+- **User can create a new account and login with that account after**: Implemented an explicit way to allow the users to register a new account or if the user already has an account, they can log back in 
+
 
 ### Design/Evaluation Achievements
-- **Design Achievement 1**: I tested my application using screen reading software, and found that...
-- **Design Achievement 2**: I followed best practices for accessibility, including providing alt attributes for images and using semantic HTML. There are no `<div>` or `<span>` elements in my document.
-- **Design Achievement 3**: We tested the application with n=X users, finding that...
+- **Accessibility**: I followed best practices for accessibility including using semantic HTML. There are no <div> or <span> elements in my document.
