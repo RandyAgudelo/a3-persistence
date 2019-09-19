@@ -8,11 +8,15 @@ http://a3-randyagudelo.glitch.me
 - The authentication strategy and database used was passport-local and lowdb which were used because it was easier to implement as I had a lack of experience using authentication strategies
 - The CSS framework used was milligram as it was recommended by the Professor and it was the one that needed the least amount of changes to the CSS I originally had
 - The CSS modifications I had to make were to properly space elements out to make it look better and to have an attractive background and readable headings.
-- The five Express middleware packages I used are passport (passport-local), body-parser, express-session, express-slash, express-debug, response-time
-- Passport was used to authenticate users using the local database, body-parser was used to make parsing requests easier, express-session was used to create a server-based session
-  with the settings I specified, express-slash was used to enable strict routing and handles the routes in server with and without trailing slashes, express-debug was used to help
-  me debug certain aspects of the web application by giving me additional details about variables, session, and more, response-time was used to record the response time of requests 
-  from the server which I used to see if a request was taking longer than it was supposed to
+- The Express middleware packages I used are passport (passport-local), body-parser, express-session, express-slash, express-debug, response-time, express-uncapitalize
+
+- Passport was used to authenticate users using the local database 
+- body-parser was used to make parsing requests easier 
+- express-session was used to create a server-based session with the settings I specified 
+- express-slash was used to enable strict routing and handles the routes in server with and without trailing slashes 
+- express-debug was used to help me debug certain aspects of the web application by giving me additional details about variables, session, and more
+- response-time was used to record the response time of requests from the server which I used to see if a request was taking longer than it was supposed to (debugging purposes)
+- express-uncapitalize redirects user HTTP requests that contain uppercase letters to the same URL in lowercase letter form   
   
 - Additional Notes/Comments: This web application should allow the user to create a new account and once the user has an account, they should be able to log back in sing the login. 
  Once new users have an account, they will start with an empty shopping List which they can add/modify/remove items. The modification of items is when th user decides to delete only a
